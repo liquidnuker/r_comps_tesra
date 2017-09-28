@@ -72,7 +72,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_main_scss__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__styles_main_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_tesra_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_tesra_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__js_tesra_js__);
 
 
 
@@ -85,11 +84,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__items_js__ = __webpack_require__(3);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
 
 var Tesra = function () {
   function Tesra(opts) {
@@ -194,7 +197,9 @@ var Tesra = function () {
       document.getElementById(this.tsContainer).innerHTML = "";
       for (var i = 0, l = this.limit; i < l; i++) {
         var tsItems = document.createElement("div");
-        tsItems.textContent = this.placeholder[i];
+        tsItems.className = "col-sm-6";
+        tsItems.innerHTML = "\n      " + this.placeholder[i].ct + "\n      " + this.placeholder[i].name + "<br>\n      " + this.placeholder[i].info + "\n      " + this.placeholder[i].avatar;
+
         document.getElementById(this.tsContainer).appendChild(tsItems);
       }
     }
@@ -203,10 +208,8 @@ var Tesra = function () {
   return Tesra;
 }();
 
-var items = ["a", "b", "c", "d", "e", "f"];
-
 var TR = new Tesra({
-  dataSrc: items,
+  dataSrc: __WEBPACK_IMPORTED_MODULE_0__items_js__["a" /* items */],
   tsContainer: "tesra_placeholder",
   limit: 2,
   autoplay: true,
@@ -214,6 +217,46 @@ var TR = new Tesra({
 });
 
 TR.init();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return items; });
+var items = [{
+  name: "name1",
+  avatar: "avatar1",
+  ct: "comment1",
+  info: "info1"
+}, {
+  name: "name2",
+  avatar: "avatar2",
+  ct: "comment2",
+  info: "info2"
+}, {
+  name: "name3",
+  avatar: "avatar3",
+  ct: "comment3",
+  info: "info3"
+}, {
+  name: "name4",
+  avatar: "avatar4",
+  ct: "comment4",
+  info: "info4"
+}, {
+  name: "name5",
+  avatar: "avatar5",
+  ct: "comment5",
+  info: "info5"
+}, {
+  name: "name6",
+  avatar: "avatar6",
+  ct: "comment6",
+  info: "info6"
+}];
+
+
 
 /***/ })
 /******/ ]);

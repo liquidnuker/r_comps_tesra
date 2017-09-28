@@ -1,3 +1,5 @@
+import {items} from "./items.js";
+
 class Tesra {
   constructor(opts) {
     this.ts = opts.dataSrc;
@@ -87,13 +89,17 @@ class Tesra {
     document.getElementById(this.tsContainer).innerHTML = "";
     for (let i = 0, l = this.limit; i < l; i++) {
       let tsItems = document.createElement("div");
-      tsItems.textContent = this.placeholder[i];
+      tsItems.className = "col-sm-6";
+      tsItems.innerHTML = `
+      ${this.placeholder[i].ct}
+      ${this.placeholder[i].name}<br>
+      ${this.placeholder[i].info}
+      ${this.placeholder[i].avatar}`;
+
       document.getElementById(this.tsContainer).appendChild(tsItems);
     }
   }
 }
-
-const items = ["a", "b", "c", "d", "e", "f"];
 
 let TR = new Tesra({
   dataSrc: items,
