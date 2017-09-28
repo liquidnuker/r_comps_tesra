@@ -65,18 +65,29 @@ class Tesra {
 
   setPrevious() {
     // reset previous items and push current items
-    this.previous = [];
+    // this.previous = [];
+    // for (let i = 0, l = this.limit; i < l; i++) {
+    //   this.previous.push(this.placeholder[i]); 
+    // }
+    // this.showItems();
+    
+    // Each randomized item will display once every cycle
     for (let i = 0, l = this.limit; i < l; i++) {
-      this.previous.push(this.placeholder[i]);
+      if (this.previous.length !== this.ts.length - this.limit) {
+        this.previous.push(this.placeholder[i]);
+      } else {
+        this.previous = [];
+        this.previous.push(this.placeholder[i]);
+      }      
     }
     this.showItems();
   }
 
   showItems() {
     document.getElementById(this.tsContainer).innerHTML = "";
-    for (let i = 0, l = this.previous.length; i < l; i++) {
+    for (let i = 0, l = this.limit; i < l; i++) {
       let tsItems = document.createElement("div");
-      tsItems.textContent = this.previous[i];
+      tsItems.textContent = this.placeholder[i];
       document.getElementById(this.tsContainer).appendChild(tsItems);
     }
   }

@@ -171,9 +171,20 @@ var Tesra = function () {
     key: "setPrevious",
     value: function setPrevious() {
       // reset previous items and push current items
-      this.previous = [];
+      // this.previous = [];
+      // for (let i = 0, l = this.limit; i < l; i++) {
+      //   this.previous.push(this.placeholder[i]); 
+      // }
+      // this.showItems();
+
+      // Each randomized item will display once every cycle
       for (var i = 0, l = this.limit; i < l; i++) {
-        this.previous.push(this.placeholder[i]);
+        if (this.previous.length !== this.ts.length - this.limit) {
+          this.previous.push(this.placeholder[i]);
+        } else {
+          this.previous = [];
+          this.previous.push(this.placeholder[i]);
+        }
       }
       this.showItems();
     }
@@ -181,9 +192,9 @@ var Tesra = function () {
     key: "showItems",
     value: function showItems() {
       document.getElementById(this.tsContainer).innerHTML = "";
-      for (var i = 0, l = this.previous.length; i < l; i++) {
+      for (var i = 0, l = this.limit; i < l; i++) {
         var tsItems = document.createElement("div");
-        tsItems.textContent = this.previous[i];
+        tsItems.textContent = this.placeholder[i];
         document.getElementById(this.tsContainer).appendChild(tsItems);
       }
     }
