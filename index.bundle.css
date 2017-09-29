@@ -804,6 +804,9 @@ input [type="button"],
 .tesra101 .tesra101_segment {
   float: left; }
 
+.tesra101 .tesra101_segment_comment {
+  min-height: 60px; }
+
 .tesra101 .tesra101_segment_user {
   background-color: #ccc;
   float: left; }

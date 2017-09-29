@@ -7,16 +7,16 @@ class Tesra {
     this.limit = opts.limit;
     this.autoplay = opts.autoplay;
     this.interval = opts.interval;
+    this.typewriter = opts.typewriter;
   }
 
   init() {
+    this.start();
     if (this.autoplay) {
       setInterval(() => {
         this.start();
       }, this.interval);
-    } else {
-      this.start();
-    }
+    } 
   }
 
   start() {
@@ -71,7 +71,7 @@ class Tesra {
     //   this.previous.push(this.placeholder[i]); 
     // }
     // this.showItems();
-    
+
     // Each randomized item will display once every cycle
     for (let i = 0, l = this.limit; i < l; i++) {
       if (this.previous.length !== this.ts.length - this.limit) {
@@ -79,16 +79,39 @@ class Tesra {
       } else {
         this.previous = [];
         this.previous.push(this.placeholder[i]);
-      }      
+      }
     }
     this.showItems();
   }
 
+  typewrite(id, text, speed) {
+    let index = 0;
+    let timer = setInterval(function () {      
+      document.getElementById(id).innerHTML = text.substr(0, index);
+      // todo: return text.substr(0, index);
+      if (++index === text.length + 1) {
+        clearInterval(timer);
+      }
+    }, speed);
+  }
+
   showItems() {
-    document.getElementById("tesra101_segment1_comment").innerHTML = this.placeholder[0].ct;
-    document.getElementById("tesra101_segment1_name").innerHTML = this.placeholder[0].name;
+    if (this.typewriter) {
+      this.typewrite("tesra101_segment1_comment", this.placeholder[0].ct, 32);
+      this.typewrite("tesra101_segment2_comment", this.placeholder[1].ct, 32);
+    } else {
+      document.getElementById("tesra101_segment1_comment").textContent = this.placeholder[0].ct;
+      document.getElementById("tesra101_segment2_comment").textContent = this.placeholder[1].ct;
+    }
+
+    // todo: shorten
+    document.getElementById("tesra101_segment1_name").textContent = this.placeholder[0].name;
     document.getElementById("tesra101_segment1_info").textContent = this.placeholder[0].info;
     document.getElementById("tesra101_segment1_avatar").setAttribute("alt", this.placeholder[0].avatar);
+
+    document.getElementById("tesra101_segment2_name").textContent = this.placeholder[1].name;
+    document.getElementById("tesra101_segment2_info").textContent = this.placeholder[1].info;
+    document.getElementById("tesra101_segment2_avatar").setAttribute("alt", this.placeholder[1].avatar);
   }
 }
 
@@ -96,7 +119,8 @@ let TR = new Tesra({
   dataSrc: items,
   limit: 2,
   autoplay: true,
-  interval: 1000
+  interval: 1600,
+  typewriter: true
 });
 
 TR.init();
