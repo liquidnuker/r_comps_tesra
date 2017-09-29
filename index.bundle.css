@@ -1,10 +1,9 @@
-@charset "UTF-8";
-.row {
+.row, .tesra101 {
   *zoom: 1; }
-  .row:before, .row:after {
+  .row:before, .tesra101:before, .row:after, .tesra101:after {
     content: ' ';
     display: table; }
-  .row:after {
+  .row:after, .tesra101:after {
     clear: both; }
 
 .btn {
@@ -29,8 +28,15 @@ input [type="button"],
   margin: 0;
   padding: 0; }
 
-.btn1-01 {
+.tesra101 .tesra101_segment_info, .tesra101 .tesra101_segment_user,
+.tesra101 .tesra101_segment_img-holder {
+  margin-top: 4px; }
+
+.btn1-01, .tesra101 .tesra101_segment, .tesra101 .tesra101_segment_user {
   padding: 4px; }
+
+.tesra101 .tesra101_segment_user {
+  text-align: right; }
 
 *,
 *:before,
@@ -795,42 +801,29 @@ input [type="button"],
   .col-lg-1 {
     width: 8.33333333%; } }
 
-body:before {
-  background-color: #FCF8E3;
-  border-bottom: 1px solid #FBEED5;
-  border-left: 1px solid #FBEED5;
-  color: #C09853;
-  font: small-caption;
-  padding: 3px 6px;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 100; }
-  @media (min-width: 20em) {
-    body:before {
-      content: "mobile \2265   320px (20em)"; } }
-  @media (min-width: 30em) {
-    body:before {
-      content: "mobileLandscape \2265   480px (30em)"; } }
-  @media (min-width: 37.5em) {
-    body:before {
-      content: "smallTabletPortrait \2265   600px (37.5em)"; } }
-  @media (min-width: 50em) {
-    body:before {
-      content: "smallTabletLandscape \2265   800px (50em)"; } }
-  @media (min-width: 46.25em) {
-    body:before {
-      content: "tabletPortrait \2265   740px (46.25em)"; } }
-  @media (min-width: 64em) {
-    body:before {
-      content: "tabletLandscape \2265   1024px (64em)"; } }
-  @media (min-width: 62em) {
-    body:before {
-      content: "desktop \2265   992px (62em)"; } }
-  @media (min-width: 75em) {
-    body:before {
-      content: "wide \2265   1200px (75em)"; } }
+.tesra101 .tesra101_segment {
+  float: left; }
+
+.tesra101 .tesra101_segment_user {
+  background-color: #ccc;
+  float: left; }
+
+.tesra101 .tesra101_segment_img-holder {
+  margin-left: 4px;
+  float: left;
+  background-color: #666; }
+  .tesra101 .tesra101_segment_img-holder > img {
+    min-width: 60px; }
+
+@media (min-width: 20em) {
+  .tesra101 .tesra101_segment {
+    width: 100%; }
+  .tesra101 .tesra101_segment_user {
+    width: 70%; } }
+
+@media (min-width: 30em) {
+  .tesra101 .tesra101_segment {
+    width: 50%; } }
 
 [class|="col"] {
   position: relative;

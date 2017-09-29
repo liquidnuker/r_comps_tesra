@@ -3,7 +3,6 @@ import {items} from "./items.js";
 class Tesra {
   constructor(opts) {
     this.ts = opts.dataSrc;
-    this.tsContainer = opts.tsContainer;
     this.previous = [];
     this.limit = opts.limit;
     this.autoplay = opts.autoplay;
@@ -86,24 +85,15 @@ class Tesra {
   }
 
   showItems() {
-    document.getElementById(this.tsContainer).innerHTML = "";
-    for (let i = 0, l = this.limit; i < l; i++) {
-      let tsItems = document.createElement("div");
-      tsItems.className = "col-sm-6";
-      tsItems.innerHTML = `
-      ${this.placeholder[i].ct}
-      ${this.placeholder[i].name}<br>
-      ${this.placeholder[i].info}
-      ${this.placeholder[i].avatar}`;
-
-      document.getElementById(this.tsContainer).appendChild(tsItems);
-    }
+    document.getElementById("tesra101_segment1_comment").innerHTML = this.placeholder[0].ct;
+    document.getElementById("tesra101_segment1_name").innerHTML = this.placeholder[0].name;
+    document.getElementById("tesra101_segment1_info").textContent = this.placeholder[0].info;
+    document.getElementById("tesra101_segment1_avatar").setAttribute("alt", this.placeholder[0].avatar);
   }
 }
 
 let TR = new Tesra({
   dataSrc: items,
-  tsContainer: "tesra_placeholder",
   limit: 2,
   autoplay: true,
   interval: 1000

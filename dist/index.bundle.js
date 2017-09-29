@@ -99,7 +99,6 @@ var Tesra = function () {
     _classCallCheck(this, Tesra);
 
     this.ts = opts.dataSrc;
-    this.tsContainer = opts.tsContainer;
     this.previous = [];
     this.limit = opts.limit;
     this.autoplay = opts.autoplay;
@@ -194,14 +193,10 @@ var Tesra = function () {
   }, {
     key: "showItems",
     value: function showItems() {
-      document.getElementById(this.tsContainer).innerHTML = "";
-      for (var i = 0, l = this.limit; i < l; i++) {
-        var tsItems = document.createElement("div");
-        tsItems.className = "col-sm-6";
-        tsItems.innerHTML = "\n      " + this.placeholder[i].ct + "\n      " + this.placeholder[i].name + "<br>\n      " + this.placeholder[i].info + "\n      " + this.placeholder[i].avatar;
-
-        document.getElementById(this.tsContainer).appendChild(tsItems);
-      }
+      document.getElementById("tesra101_segment1_comment").innerHTML = this.placeholder[0].ct;
+      document.getElementById("tesra101_segment1_name").innerHTML = this.placeholder[0].name;
+      document.getElementById("tesra101_segment1_info").textContent = this.placeholder[0].info;
+      document.getElementById("tesra101_segment1_avatar").setAttribute("alt", this.placeholder[0].avatar);
     }
   }]);
 
@@ -210,7 +205,6 @@ var Tesra = function () {
 
 var TR = new Tesra({
   dataSrc: __WEBPACK_IMPORTED_MODULE_0__items_js__["a" /* items */],
-  tsContainer: "tesra_placeholder",
   limit: 2,
   autoplay: true,
   interval: 1000

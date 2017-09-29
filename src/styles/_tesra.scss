@@ -1,0 +1,66 @@
+// tesra101
+// ==================================================/
+.tesra101 {
+  @extend %clearfix;
+
+  .tesra101_segment {
+    @extend %padd--4;
+    float: left;
+  }
+
+  .tesra101_segment_comment {
+    // @extend %clearfix;
+  }
+
+  .tesra101_segment_user {
+    @extend %text--right;
+    @extend %padd--4;
+    background-color: #ccc;
+    float: left;
+  }
+
+  .tesra101_segment_info {
+    @extend %margin-top--4;
+  }
+
+  .tesra101_segment_img-holder {
+    margin-left: 4px;
+    float: left;
+    background-color: #666;
+
+    > img {
+      min-width: 60px;
+    }
+  }
+
+  .tesra101_segment_user,
+  .tesra101_segment_img-holder {
+    @extend %margin-top--4;
+  }  
+}
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .tesra101 {
+    .tesra101_segment {
+      width: 100%;
+    }
+
+    .tesra101_segment_user {
+      width: 70%;
+    }
+  }  
+}
+
+// *mobile landscape (480x320)
+@include mq($from: mobileLandscape) {
+  .tesra101 {
+    .tesra101_segment {
+      width: 50%;
+    }
+
+    .tesra101_segment_user {
+      // width: 80%;
+    }
+  } 
+}
