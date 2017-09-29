@@ -196,6 +196,7 @@ var Tesra = function () {
       var index = 0;
       var timer = setInterval(function () {
         document.getElementById(id).innerHTML = text.substr(0, index);
+        // todo: return text.substr(0, index);
         if (++index === text.length + 1) {
           clearInterval(timer);
         }
@@ -229,7 +230,7 @@ var Tesra = function () {
 var TR = new Tesra({
   dataSrc: __WEBPACK_IMPORTED_MODULE_0__items_js__["a" /* items */],
   limit: 2,
-  autoplay: true,
+  autoplay: false,
   interval: 1600,
   typewriter: true
 });

@@ -118,7 +118,7 @@ class Tesra {
 let TR = new Tesra({
   dataSrc: items,
   limit: 2,
-  autoplay: true,
+  autoplay: false,
   interval: 1600,
   typewriter: true
 });
