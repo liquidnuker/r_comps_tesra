@@ -230,7 +230,7 @@ var Tesra = function () {
 var TR = new Tesra({
   dataSrc: __WEBPACK_IMPORTED_MODULE_0__items_js__["a" /* items */],
   limit: 2,
-  autoplay: false,
+  autoplay: true,
   interval: 1600,
   typewriter: true
 });

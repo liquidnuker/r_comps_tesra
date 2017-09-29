@@ -6,6 +6,9 @@
   .row:after, .tesra101:after {
     clear: both; }
 
+.tesra101 .tesra101_segment_comment {
+  position: relative; }
+
 .btn {
   display: inline-block; }
 
@@ -811,10 +814,11 @@ input [type="button"],
   background-color: #f5f3da;
   color: #3b443f; }
   .tesra101 .tesra101_segment_comment {
-    background-color: #fff;
-    border: 1px solid #3b443f; }
+    background-color: #fff; }
   .tesra101 .tesra101_segment_name {
     color: #c32349; }
+  .tesra101 .tesra101_segment_img-holder {
+    background-color: #666; }
 
 .tesra101 .tesra101_segment {
   float: left; }
@@ -822,13 +826,23 @@ input [type="button"],
 .tesra101 .tesra101_segment_comment {
   width: 100%;
   min-height: 60px;
-  max-height: 80px;
-  overflow: hidden; }
-  .tesra101 .tesra101_segment_comment:hover {
-    overflow-y: scroll; }
+  max-height: 80px; }
+  .tesra101 .tesra101_segment_comment:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 65%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -10px;
+    margin-bottom: -20px; }
 
 .tesra101 .tesra101_segment_user {
-  padding-right: 4px;
+  padding-right: 20px;
   float: left; }
 
 .tesra101 .tesra101_segment_user,
@@ -836,8 +850,7 @@ input [type="button"],
   overflow: hidden; }
 
 .tesra101 .tesra101_segment_img-holder {
-  float: right;
-  background-color: #666; }
+  float: right; }
   .tesra101 .tesra101_segment_img-holder > img {
     min-width: 60px; }
 

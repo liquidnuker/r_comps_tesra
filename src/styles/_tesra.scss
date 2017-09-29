@@ -7,11 +7,15 @@
 
     .tesra101_segment_comment {
       background-color: #fff;
-      border: 1px solid #3b443f;
+      // border: 1px solid #3b443f;
     }
 
     .tesra101_segment_name {
       color: #c32349;
+    }
+
+    .tesra101_segment_img-holder {
+      background-color: #666;
     }
 
   }
@@ -26,21 +30,36 @@
   }
 
   .tesra101_segment_comment {
+    @extend %pos--relative;
     @extend %br--4;
     @extend %padd--4;
     width: 100%;
     min-height: 60px;
     max-height: 80px;
-    overflow: hidden;
-
-    &:hover {
-      overflow-y: scroll;
+    
+    &:after {
+      // speech bubble credits to:
+      // leaverou.github.io/bubbly/
+      content: ''; 
+      position: absolute; 
+      bottom: 0; 
+      left: 65%; 
+      width: 0; 
+      height: 0; 
+      border: 20px solid transparent; 
+      border-top-color: #fff; 
+      border-bottom: 0; 
+      border-right: 0; 
+      margin-left: -10px; 
+      margin-bottom: -20px;
     }
+
+    // todo: add overflow clamp 
   }
 
   .tesra101_segment_user {
     @extend %text--right;
-    padding-right: 4px;
+    padding-right: 20px;
     float: left;
   }
 
@@ -59,10 +78,8 @@
   }
 
   .tesra101_segment_img-holder {
-    // margin-left: 4px;
     float: right;
-    background-color: #666;
-
+    
     > img {
       min-width: 60px;
     }
