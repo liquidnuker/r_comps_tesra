@@ -2,15 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 const Promise = require('es6-promise').Promise;
 
+const glob = require('glob-all');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const PurifyCSSPlugin = require('purifycss-webpack');
 const extractCSS = new ExtractTextPlugin('../[name].bundle.css');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
     index: './index.js'
-    // vendor: ['jquery', 'lodash']
+      // vendor: ['jquery', 'lodash']
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -34,8 +35,7 @@ module.exports = {
             limit: 10000
           } // Convert images < 10k to base64 strings
         }]
-      },
-      {
+      }, {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -65,7 +65,15 @@ module.exports = {
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'vendor',
     // }),
-    extractCSS
+    extractCSS,
+    new PurifyCSSPlugin({
+      // Give paths to parse for rules. These should be absolute!
+      paths: glob.sync([
+        path.join(__dirname, '*.html'),
+        path.join(__dirname, 'src/vue-components/*.vue')
+      ]),
+    })
+
   ],
   resolve: {
     modules: [
