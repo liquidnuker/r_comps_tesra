@@ -825,11 +825,12 @@ input [type="button"],
 
 .tesra101 .tesra101_comment {
   width: 100%;
-  min-height: 60px;
   max-height: 80px; }
   .tesra101 .tesra101_comment blockquote {
     height: 60px;
     overflow: hidden; }
+    .tesra101 .tesra101_comment blockquote:hover {
+      overflow-y: scroll; }
   .tesra101 .tesra101_comment:after {
     content: '';
     position: absolute;

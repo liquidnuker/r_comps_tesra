@@ -235,7 +235,7 @@ var TR = new Tesra({
   typewriter: true
 });
 
-// TR.init();
+TR.init();
 
 /***/ }),
 /* 3 */

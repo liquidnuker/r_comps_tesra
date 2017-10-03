@@ -34,12 +34,16 @@
     @extend %br--4;
     @extend %padd--4;
     width: 100%;
-    min-height: 60px;
+    // min-height: 60px;
     max-height: 80px;
 
     blockquote {
       height: 60px;
       overflow: hidden;
+
+      &:hover {
+        overflow-y: scroll;
+      }
     }
 
     &:after {
