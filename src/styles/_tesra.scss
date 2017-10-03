@@ -5,16 +5,16 @@
     background-color: #f5f3da;
     color: #3b443f;
 
-    .tesra101_segment_comment {
+    .tesra101_comment {
       background-color: #fff;
       // border: 1px solid #3b443f;
     }
 
-    .tesra101_segment_name {
+    .tesra101_name {
       color: #c32349;
     }
 
-    .tesra101_segment_img-holder {
+    .tesra101_img-holder {
       background-color: #666;
     }
 
@@ -29,14 +29,19 @@
     float: left;
   }
 
-  .tesra101_segment_comment {
+  .tesra101_comment {
     @extend %pos--relative;
     @extend %br--4;
     @extend %padd--4;
     width: 100%;
     min-height: 60px;
     max-height: 80px;
-    
+
+    blockquote {
+      height: 60px;
+      overflow: hidden;
+    }
+
     &:after {
       // speech bubble credits to:
       // leaverou.github.io/bubbly/
@@ -57,27 +62,27 @@
     // todo: add overflow clamp 
   }
 
-  .tesra101_segment_user {
+  .tesra101_user {
     @extend %text--right;
     padding-right: 20px;
     float: left;
   }
 
-  .tesra101_segment_user,
-  .tesra101_segment_img-holder {
+  .tesra101_user,
+  .tesra101_img-holder {
     @extend %margin-top--4;
   }
 
-  .tesra101_segment_user,
-  .tesra101_segment_img-holder {
+  .tesra101_user,
+  .tesra101_img-holder {
     overflow: hidden;
   }
 
-  .tesra101_segment_name {
+  .tesra101_name {
     @extend %font--bold;
   }
 
-  .tesra101_segment_img-holder {
+  .tesra101_img-holder {
     float: right;
     
     > img {
@@ -85,7 +90,7 @@
     }
   }
 
-  .tesra101_segment_info {
+  .tesra101_info {
     @extend %margin-top--4;
   }
 }
@@ -97,11 +102,11 @@
       width: 100%;
     }
 
-    .tesra101_segment_user {
+    .tesra101_user {
       width: 70%;
     }
 
-    .tesra101_segment_img-holder {
+    .tesra101_img-holder {
       width: 30%;
     }
   }  
