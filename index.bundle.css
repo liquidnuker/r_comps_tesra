@@ -811,12 +811,14 @@ input [type="button"],
     width: 8.33333333%; } }
 
 .tesra101 {
-  background-color: #f5f3da;
-  color: #3b443f; }
+  background-color: #1c1d22;
+  color: #d5d5d5; }
   .tesra101 .tesra101_comment {
-    background-color: #fff; }
+    background-color: #f0f0f0;
+    color: #2c2d32;
+    border-bottom: 1px solid #be0101; }
   .tesra101 .tesra101_name {
-    color: #c32349; }
+    color: #fff; }
   .tesra101 .tesra101_img-holder {
     background-color: #666; }
 
@@ -839,19 +841,23 @@ input [type="button"],
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: #fff;
+    border-top-color: #f0f0f0;
     border-bottom: 0;
     border-right: 0;
     margin-left: -10px;
     margin-bottom: -20px; }
 
 .tesra101 .tesra101_user {
-  padding-right: 20px;
+  padding-right: 24px;
   float: left; }
 
 .tesra101 .tesra101_user,
 .tesra101 .tesra101_img-holder {
   overflow: hidden; }
+
+.tesra101 .tesra101_name,
+.tesra101 .tesra101_info {
+  text-overflow: ellipsis; }
 
 .tesra101 .tesra101_img-holder {
   float: right; }
