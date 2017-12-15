@@ -52,7 +52,7 @@
         vertical-align: -0.4em;
       }
 
-      &:after {
+      &::after {
         content:"\201D"; // Safari/Chrome
       }
 
@@ -61,7 +61,7 @@
       }
     }
 
-    &:after {
+    &::after {
       // speech bubble credits to:
       // leaverou.github.io/bubbly/
       content: ''; 
