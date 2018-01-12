@@ -105,10 +105,20 @@
   }
 
   .tesra101_img-holder {
+    // @extend %padd--4;
+    @extend %pos--relative;
     float: right;
+    height: 84px;
     
     > img {
-      min-width: 60px;
+      // centering
+      // use absolute to ignore parent's padding
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      max-width: 100%;
+      max-height: 100%;  
     }
   }
 

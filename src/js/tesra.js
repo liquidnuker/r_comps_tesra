@@ -107,10 +107,12 @@ class Tesra {
     // todo: shorten
     document.getElementById("tesra101_segment1_name").textContent = this.placeholder[0].name;
     document.getElementById("tesra101_segment1_info").textContent = this.placeholder[0].info;
+    document.getElementById("tesra101_segment1_avatar").setAttribute("src", "src/img/avatars/" + this.placeholder[0].avatar + ".jpg");
     document.getElementById("tesra101_segment1_avatar").setAttribute("alt", this.placeholder[0].avatar);
 
     document.getElementById("tesra101_segment2_name").textContent = this.placeholder[1].name;
     document.getElementById("tesra101_segment2_info").textContent = this.placeholder[1].info;
+    document.getElementById("tesra101_segment2_avatar").setAttribute("src", "src/img/avatars/" + this.placeholder[1].avatar + ".jpg");
     document.getElementById("tesra101_segment2_avatar").setAttribute("alt", this.placeholder[1].avatar);
   }
 }
